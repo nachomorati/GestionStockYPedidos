@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">GestionStockYPedidos</string>
+    <string name="usuario">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="btnLogin">Login</string>
 </resources>
