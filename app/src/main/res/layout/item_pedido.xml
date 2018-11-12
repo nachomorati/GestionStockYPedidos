@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvCodigoInterno"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:text="EAR000123"
+        android:layout_margin="5dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvUsuario"
+            android:text="usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="14sp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/tvFechaPedido"
+            android:text="20/11/2018"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="14sp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/tvHoraPedido"
+            android:text="15:32 hs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="14sp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
