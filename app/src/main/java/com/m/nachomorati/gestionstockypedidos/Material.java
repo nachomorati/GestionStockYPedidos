@@ -10,8 +10,8 @@ public class Material {
         this.id = -1;
     }
 
-    public Material(int id, String ear, String descripcion, int stock) {
-        this.id = id;
+    public Material(String ear, String descripcion, int stock) {
+        this.id = -1;
         this.ear = ear;
         this.descripcion = descripcion;
         this.stock = stock;
