@@ -28,13 +28,8 @@ public class InventariosActivity extends AppCompatActivity {
         fechaInventario.setText(simpleDateFormat);
 
         //TODO llenar ArrayList con el JSON
-        Material m1 = new Material("EAR001100", "RODAMIENTO 6600", 16);
-        Material m2 = new Material("EAR000500", "ROTULA IZQ M12", 7);
-        Material m3 = new Material("EAR001738", "FILTRO 40 MIC", 3);
 
-        inventarios.add(new Inventario(m1, 15));
-        inventarios.add(new Inventario(m2, 9));
-        inventarios.add(new Inventario(m3, 3));
+
 
         lvInventarios = (ListView)findViewById(R.id.lvInventarios);
         AdapterInventarios adapterInventarios = new AdapterInventarios(this, inventarios);

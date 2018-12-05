@@ -1,7 +1,9 @@
 package com.m.nachomorati.gestionstockypedidos;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.EditText;
@@ -68,6 +70,8 @@ public class UsuariosJson extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String s) {
         //Log.i("s", s);
         JSONArray array_usuarios = null;
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(activity, "administracion", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
 
         try {
             array_usuarios = new JSONArray(s.toString());
@@ -86,7 +90,22 @@ public class UsuariosJson extends AsyncTask<String, Void, String> {
                 usuario.setPerfil(user.getInt("Perfil"));
 
                 usuarios.add(usuario);
+
+                //llenar la base de datos
+                int id = usuario.getId();
+                String usuario_bd = usuario.getUsuario();
+                int perfil = usuario.getPerfil();
+
+                ContentValues registro = new ContentValues();
+
+                registro.put("id", id);
+                registro.put("usuario", usuario_bd);
+                registro.put("perfil", perfil);
+
+                bd.insert("usuarios", null, registro);
+
             }
+            bd.close();
 
             //Llenar el ArrayList usuarios de MainActivity
 

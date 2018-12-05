@@ -1,44 +1,96 @@
 package com.m.nachomorati.gestionstockypedidos;
 
 public class Material {
-    private int id;
-    private String ear;
-    private String descripcion;
+    private String plant, material, description, batch, storage_location, status, pallets, value, ff;
     private int stock;
 
     public Material() {
-        this.id = -1;
+
     }
 
-    public Material(String ear, String descripcion, int stock) {
-        this.id = -1;
-        this.ear = ear;
-        this.descripcion = descripcion;
+    public Material(String plant, String material, String description, String batch, String storage_location, String status, String pallets, String value, String ff, int stock) {
+        this.plant = plant;
+        this.material = material;
+        this.description = description;
+        this.batch = batch;
+        this.storage_location = storage_location;
+        this.status = status;
+        this.pallets = pallets;
+        this.value = value;
+        this.ff = ff;
         this.stock = stock;
     }
 
-    public int getId() {
-        return id;
+    public String getPlant() {
+        return plant;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPlant(String plant) {
+        this.plant = plant;
     }
 
-    public String getEar() {
-        return ear;
+    public String getMaterial() {
+        return material;
     }
 
-    public void setEar(String ear) {
-        this.ear = ear;
+    public void setMaterial(String material) {
+        this.material = material;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getBatch() {
+        return batch;
+    }
+
+    public void setBatch(String batch) {
+        this.batch = batch;
+    }
+
+    public String getStorage_location() {
+        return storage_location;
+    }
+
+    public void setStorage_location(String storage_location) {
+        this.storage_location = storage_location;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getPallets() {
+        return pallets;
+    }
+
+    public void setPallets(String pallets) {
+        this.pallets = pallets;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getFf() {
+        return ff;
+    }
+
+    public void setFf(String ff) {
+        this.ff = ff;
     }
 
     public int getStock() {

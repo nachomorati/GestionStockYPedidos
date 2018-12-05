@@ -56,10 +56,10 @@ public class AdapterInventarios extends BaseAdapter {
         Inventario dir = items.get(position);
 
         TextView codigoInterno = (TextView)v.findViewById(R.id.tvCodigoInterno);
-        codigoInterno.setText(dir.getMaterial().getEar());
+        codigoInterno.setText(dir.getMaterial().getMaterial());
 
         TextView descripcion = (TextView)v.findViewById(R.id.tvDescripcion);
-        descripcion.setText(dir.getMaterial().getDescripcion());
+        descripcion.setText(dir.getMaterial().getDescription());
 
         TextView cantidad = (TextView)v.findViewById(R.id.tvCantidad);
         cantidad.setText(String.valueOf(dir.getCantidad()));

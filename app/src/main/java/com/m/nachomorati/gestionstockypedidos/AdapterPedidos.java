@@ -62,13 +62,13 @@ public class AdapterPedidos extends BaseAdapter {
         codigoInterno.setText(dir.getCodigoInterno());
 
         TextView usuario = (TextView)v.findViewById(R.id.tvUsuario);
-        usuario.setText(dir.getUsuario());
+        //usuario.setText(dir.getUsuario());
 
         TextView fechaPedido = (TextView)v.findViewById(R.id.tvFechaPedido);
         fechaPedido.setText(dir.getFechaPedido().toString());
 
         TextView horaPedido = (TextView) v.findViewById(R.id.tvHoraPedido);
-        horaPedido.setText(dir.getHoraPedido().toString());
+        //horaPedido.setText(dir.getHoraPedido().toString());
 
         return v;
     }

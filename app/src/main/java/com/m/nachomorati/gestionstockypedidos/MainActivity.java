@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     EditText usuario, password;
     Button login;
-    ArrayList<Usuario> usuarios = new ArrayList<>();
+    public ArrayList<Usuario> usuarios = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String txtUsuario = null;
                 String txtPassword = null;
-                Boolean encontrado = false;
                 try {
                     txtUsuario = usuario.getText().toString();
                     txtPassword = md5(password.getText().toString());
@@ -46,18 +45,17 @@ public class MainActivity extends AppCompatActivity {
                         //Log.i("usuario password:", usuarios.get(i).getPassword());
 
                         if(txtUsuario.equals(usuarios.get(i).getUsuario()) && txtPassword.equals(usuarios.get(i).getPassword())) {
-                            encontrado = true;
                             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                             startActivity(intent);
+                            return;
                         }
                     }
 
                 } catch (NoSuchAlgorithmException e) {
                     e.printStackTrace();
                 }
-                if (!encontrado) {
-                    Toast.makeText(MainActivity.this, "Usuario y/o contraseña no válidos.", Toast.LENGTH_SHORT).show();
-                }
+
+                Toast.makeText(MainActivity.this, "Usuario y/o contraseña no válidos.", Toast.LENGTH_SHORT).show();
 
             }
         });

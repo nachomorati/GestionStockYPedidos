@@ -3,20 +3,21 @@ package com.m.nachomorati.gestionstockypedidos;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Pedido {
     private int id;
-    private String usuario;
-    private String solicitante;
-    private String codigoInterno;
-    private int cantidad;
-    private String codigoUsuario;
-    private LocalDate fechaPedido;
-    private LocalTime horaPedido;
-    private LocalDate fechaSalida;
-    private LocalTime horaSalida;
+    private Usuario usuario;
+    private Usuario solicitante;
+    private Map<String, Integer> items;
+    private LocalDateTime fechaPedido;
+    private LocalDateTime fechaSalida;
+    private String comentario;
 
     public Pedido() {
+        this.items = new HashMap<>();
     }
 
     public int getId() {
@@ -27,75 +28,51 @@ public class Pedido {
         this.id = id;
     }
 
-    public String getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
-    public String getSolicitante() {
+    public Usuario getSolicitante() {
         return solicitante;
     }
 
-    public void setSolicitante(String solicitante) {
+    public void setSolicitante(Usuario solicitante) {
         this.solicitante = solicitante;
     }
 
-    public String getCodigoInterno() {
-        return codigoInterno;
-    }
-
-    public void setCodigoInterno(String codigoInterno) {
-        this.codigoInterno = codigoInterno;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public String getCodigoUsuario() {
-        return codigoUsuario;
-    }
-
-    public void setCodigoUsuario(String codigoUsuario) {
-        this.codigoUsuario = codigoUsuario;
-    }
-
-    public LocalDate getFechaPedido() {
+    public LocalDateTime getFechaPedido() {
         return fechaPedido;
     }
 
-    public void setFechaPedido(LocalDate fechaPedido) {
+    public void setFechaPedido(LocalDateTime fechaPedido) {
         this.fechaPedido = fechaPedido;
     }
 
-    public LocalTime getHoraPedido() {
-        return horaPedido;
-    }
-
-    public void setHoraPedido(LocalTime horaPedido) {
-        this.horaPedido = horaPedido;
-    }
-
-    public LocalDate getFechaSalida() {
+    public LocalDateTime getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(LocalDate fechaSalida) {
+    public void setFechaSalida(LocalDateTime fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
-    public LocalTime getHoraSalida() {
-        return horaSalida;
+    public String getComentario() {
+        return comentario;
     }
 
-    public void setHoraSalida(LocalTime horaSalida) {
-        this.horaSalida = horaSalida;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
+    public Map<String, Integer> getItems() {
+        return items;
+    }
+
+    public void setItems(Map<String, Integer> items) {
+        this.items = items;
     }
 }
